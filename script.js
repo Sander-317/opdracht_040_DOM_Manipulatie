@@ -1,8 +1,11 @@
 const bigFiveButton = document.querySelectorAll(".big-five-button")
-const RemoveFirstItemButton = document.getElementById("remove-first-item-button")
+const removeFirstItemButton = document.getElementById("remove-first-item-button")
+const removeAllButton = document.getElementById("remove-all-button")
 
 document.querySelectorAll(".big-five-button").forEach(button => button.addEventListener("click", () => bigFiveSpotted(button.innerHTML)))
-RemoveFirstItemButton.addEventListener("click", removeFirstItem)
+removeFirstItemButton.addEventListener("click", removeFirstItem)
+removeAllButton.addEventListener("click", removeAll)
+
 
 // const newLi = document.createElement("li")
 const spottedAnimalsList = document.getElementById("spotted-animals-list")
@@ -18,4 +21,8 @@ function bigFiveSpotted(animal) {
 
 function removeFirstItem() {
    spottedAnimalsList.removeChild(spottedAnimalsList.childNodes[0])
+}
+
+function removeAll(){
+    spottedAnimalsList.innerHTML = ""
 }
